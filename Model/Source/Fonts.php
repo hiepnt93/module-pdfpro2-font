@@ -42,17 +42,18 @@ class Fonts extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSource
     public function getAllOptions()
     {
         if ($this->_options === null) {
-            $includePatterns = ['#*.TTF#', '#*.ttf#', '*.otf', '*.OTF'];
+            $includePatterns = ['TTF', 'ttf', 'otf', 'OTF'];
 
-            $directoryPath = $this->directoryList->getPath('lib/Vnecoms/mpdf/ttfonts');
+            $directoryPath = BP . '/lib/Vnecoms/mpdf/ttfonts';
             if ($this->driverFile->isExists($directoryPath)) {
                 $files = $this->driverFile->readDirectory($directoryPath);
+
                 foreach ($files as $file) {
                     foreach ($includePatterns as $pattern) {
-                        if (preg_match($pattern, $file)) {
+                        if (preg_match('/^.*\.('.$pattern.')$/i', $file,$matches)) {
                             $this->_options[] = [
-                                'label' => $file,
-                                'value' => $file
+                                'label' => basename($matches[0]),
+                                'value' => basename($matches[0])
                             ];
                         }
                     }
