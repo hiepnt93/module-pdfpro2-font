@@ -1,0 +1,24 @@
+{
+    "name": "vnecoms/module-pdfpro2-font",
+    "description": "Magento 2 Vnecoms PdfPro Fonts.",
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "email": "hiepnt93@gmail.com",
+            "name": "Hiep Nguyen"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "~5.6.5|7.0.2|7.0.4|~7.0.6",
+        "vnecoms/module-core": "2.*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Vnecoms\\PdfProFont\\": ""
+        }
+    }
+}
