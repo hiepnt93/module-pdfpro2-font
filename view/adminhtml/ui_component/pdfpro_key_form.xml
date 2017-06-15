@@ -18,6 +18,7 @@
                     <item name="addButtonLabel" xsi:type="string">Add New </item>
                     <item name="deleteProperty" xsi:type="boolean">false</item>
                     <item name="renderDefaultRecord" xsi:type="boolean">false</item>
+                    <item name="additionalClasses" xsi:type="string">admin__field-wide</item>
                     <item name="dndConfig" xsi:type="array">
                         <item name="enabled" xsi:type="boolean">false</item>
                     </item>
@@ -26,19 +27,55 @@
             <container name="record">
                 <argument name="data" xsi:type="array">
                     <item name="config" xsi:type="array">
-                        <item name="label" xsi:type="string" translate="true">Record label goes here</item>
                         <item name="component" xsi:type="string" translate="true">Magento_Ui/js/dynamic-rows/record</item>
                         <item name="isTemplate" xsi:type="boolean">true</item>
                         <item name="is_collection" xsi:type="boolean">true</item>
                         <item name="showFallbackReset" xsi:type="boolean">false</item>
                     </item>
                 </argument>
-                <field name="url_key">
+                <field name="title">
                     <argument name="data" xsi:type="array">
                         <item name="config" xsi:type="array">
+                            <item name="label" xsi:type="string" translate="true">Title</item>
                             <item name="formElement" xsi:type="string">input</item>
-                            <item name="source" xsi:type="string">category</item>
+                            <item name="source" xsi:type="string">key</item>
                             <item name="sortOrder" xsi:type="number">10</item>
+                        </item>
+                    </argument>
+                </field>
+                <field name="regular_font">
+                    <argument name="data" xsi:type="array">
+                        <item name="options" xsi:type="object">Vnecoms\PdfProFont\Model\Source\Fonts</item>
+                        <item name="config" xsi:type="array">
+                            <item name="sortOrder" xsi:type="number">20</item>
+                            <item name="dataType" xsi:type="string">string</item>
+                            <item name="source" xsi:type="string">key</item>
+                            <item name="formElement" xsi:type="string">select</item>
+                            <item name="label" xsi:type="string" translate="true">Regular Font</item>
+                        </item>
+                    </argument>
+                </field>
+                <field name="i_font">
+                    <argument name="data" xsi:type="array">
+                        <item name="options" xsi:type="object">Vnecoms\PdfProFont\Model\Source\Fonts</item>
+                        <item name="config" xsi:type="array">
+                            <item name="sortOrder" xsi:type="number">30</item>
+                            <item name="dataType" xsi:type="string">string</item>
+                            <item name="formElement" xsi:type="string">select</item>
+                            <item name="source" xsi:type="string">key</item>
+                            <item name="label" xsi:type="string" translate="true">Italic Font</item>
+                        </item>
+                    </argument>
+                </field>
+                <field name="otl">
+                    <argument name="data" xsi:type="array">
+                        <item name="options" xsi:type="object">Magento\Config\Model\Config\Source\Yesno</item>
+                        <item name="config" xsi:type="array">
+                            <item name="sortOrder" xsi:type="number">40</item>
+                            <item name="dataType" xsi:type="string">string</item>
+                            <item name="source" xsi:type="string">key</item>
+                            <item name="formElement" xsi:type="string">select</item>
+                            <item name="label" xsi:type="string" translate="true">Use OTL</item>
                         </item>
                     </argument>
                 </field>

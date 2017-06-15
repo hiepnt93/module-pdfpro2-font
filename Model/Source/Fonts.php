@@ -42,7 +42,7 @@ class Fonts extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSource
     public function getAllOptions()
     {
         if ($this->_options === null) {
-            $includePatterns = ['TTF', 'ttf', 'otf', 'OTF'];
+            $includePatterns = ['ttf', 'otf'];
 
             $directoryPath = BP . '/lib/Vnecoms/mpdf/ttfonts';
             if ($this->driverFile->isExists($directoryPath)) {
